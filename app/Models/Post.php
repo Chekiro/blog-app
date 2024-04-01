@@ -42,6 +42,27 @@ class Post extends Model
     {
         $query->where('published_at', '<=', Carbon::now());
     }
+
+    public function scopeWithCategory($query, string $category)
+    {
+        $query->whereHas('categories', function ($query) use ($category) {
+            $query->where('slug', $category);
+        });
+    }
+
+    public function scopePopular($query)
+    {
+        $query->withCount('likes')
+            ->orderBy("likes_count", 'desc');
+    }
+
+    public function scopeSearch($query, string $search = '')
+    {
+        $query->where('title', 'like', "%{$search}%");
+    }
+
+
+
     public function scopeFeatured($query)
     {
         $query->where('featured', true);
