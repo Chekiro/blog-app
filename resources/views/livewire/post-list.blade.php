@@ -6,9 +6,20 @@
             <button class="{{$sort === 'asc' ? 'border-b border-gray-700 text-gray-900':'text-gray-500'}} py-4" wire:click="setSort('asc')">Oldest</button>
         </div>
         <div class="text-gray-600">
-            @if ($search)
-                Searching {{$search}} ...
-            @endif
+            @if ($this->activeCategory || $search)
+            <button class="mr-3 text-xs gray-500" wire:click="clearFilters()">Clear Filters</button>
+        @endif
+        @if ($this->activeCategory)
+            <x-badge wire:navigate href="{{ route('blog.index', ['category' => $this->activeCategory->slug]) }}"
+                :textColor="$this->activeCategory->text_color" :bgColor="$this->activeCategory->bg_color">
+                {{ $this->activeCategory->title }}
+            </x-badge>
+        @endif
+        @if ($search)
+            <span class="ml-2">
+                Searching : <strong>{{ $search }}</strong>
+            </span>
+        @endif
         </div>
     </div>
     <div class="py-4">
