@@ -39,5 +39,6 @@
                 <x-blog.category-badge :category="$category" />
             @endforeach
         </div>
+        <livewire:post-comments :key="'comments' . $post->id" :$post />
     </article>
 </x-app-layout>
