@@ -61,6 +61,11 @@ class Post extends Model
         $query->where('title', 'like', "%{$search}%");
     }
 
+    public function likes()
+    {
+        return $this->belongsToMany(User::class, 'post_like')->withTimestamps();
+    }
+
 
 
     public function scopeFeatured($query)
