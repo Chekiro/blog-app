@@ -12,14 +12,13 @@ use Livewire\WithPagination;
 
 class PostList extends Component
 {
-
     use WithPagination;
 
     #[Url()]
-    public $search = '';
+    public $sort = 'desc';
 
     #[Url()]
-    public $sort = 'desc';
+    public $search = '';
 
     #[Url()]
     public $category = '';
@@ -27,20 +26,9 @@ class PostList extends Component
     #[Url()]
     public $popular = false;
 
-    #[Computed()]
-    public function posts()
+    public function setSort($sort)
     {
-        return Post::published()
-            ->with('author', 'categories')
-            ->when($this->activeCategory, function ($query) {
-                $query->withCategory($this->category);
-            })
-            ->when($this->popular, function ($query) {
-                $query->popular();
-            })
-            ->search($this->search)
-            ->orderBy('published_at', $this->sort)
-            ->paginate(3);
+        $this->sort = ($sort === 'desc') ? 'desc' : 'asc';
     }
 
     #[On('search')]
@@ -58,6 +46,22 @@ class PostList extends Component
     }
 
     #[Computed()]
+    public function posts()
+    {
+        return Post::published()
+            ->with('author', 'categories')
+            ->when($this->activeCategory, function ($query) {
+                $query->withCategory($this->category);
+            })
+            ->when($this->popular, function ($query) {
+                $query->popular();
+            })
+            ->search($this->search)
+            ->orderBy('published_at', $this->sort)
+            ->paginate(3);
+    }
+
+    #[Computed()]
     public function activeCategory()
     {
         if ($this->category === null || $this->category === '') {
@@ -67,11 +71,6 @@ class PostList extends Component
         return Category::where('slug', $this->category)->first();
     }
 
-    public function setSort($sort)
-    {
-        $this->sort = ($sort === 'desc') ? 'desc' : 'asc';
-        $this->resetPage();
-    }
     public function render()
     {
         return view('livewire.post-list');
