@@ -11,6 +11,7 @@ class PostsPerMonthChart extends ChartWidget
 {
     protected static ?string $heading = 'Chart | Posts Per Month';
     protected int | string | array $columnSpan = 'full';
+    protected static string $color = 'success';
 
     protected function getData(): array
     {
