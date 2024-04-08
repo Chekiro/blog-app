@@ -7,59 +7,40 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+# 🚀 Food Blog App
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+![Laravel](https://img.shields.io/badge/Laravel-10-orange) ![Bootstrap](https://img.shields.io/badge/Bootstrap-5-blue)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 📝 Introduction
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Laravel-based food blog project, accentuated with Livewire 3 , Filament 3. This dynamic platform showcases the latest and highlighted posts on its homepage, complemented by a user-friendly login and registration system. Within the blog section, users can explore a curated list of posts, filterable by likes, recency, and categories.
 
-## Learning Laravel
+The project includes a robust admin panel powered by Filament 3 for Laravel, granting administrators comprehensive control over user management, permissions, and content moderation. With three distinct user roles – User, Editor, and Admin – the project caters to a diverse range of users, offering varying levels of access and functionalities. The admin panel has charts showing the number of users, the number of posts and, using a chart, the number of posts per month.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🎯 Features
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+-   User registration and authentication
+-   Session management
+-   Create, edit, and delete posts
+-   Comment on posts
+-   Like posts
+-   Widgets and Charts in Admin Panel
+-   Admin Dashboard for administrator
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🚀 Tools
 
-## Laravel Sponsors
+-   Livewire 3
+-   Filament 3
+-   Laravel
+-   Tailwind Css
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🌐 Getting Started
 
-### Premium Partners
+To run the project, follow these steps:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+1. Run `composer install`.
+2. Run `php artisan serve` to start the server.
+3. Run `php artisan migrate` to create the tables in the database.
 
 ## License
 
